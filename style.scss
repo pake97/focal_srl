@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Exan';
+    src: //url('myfont.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+     url('/font/Exan-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+
+* {
+    border: none;
+    margin: 0;
+  }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    //background: radial-gradient(#555, #111);
+  }
+  canvas {
+    background: white;
+    background: radial-gradient(#FFF, #DDD);
+    //background: radial-gradient(hsl(40, 80%, 60%), hsl(0, 50%, 40%));
+    //filter: blur(1px) contrast(5);
+    //transform: scale(0.1);
+    transform-origin: 0 0;
+    //border: solid .8em green;
+    width: 100%;
+    height: 100%;
+  }
+  .ui {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    padding: 10px;
+    background: rgba(255,255,255,0.7);
+    
+    p {
+      //color: white;
+      font-size: 11px;
+      font-weight: 700;
+      
+      &.zoom {
+        margin-bottom: 5px;
+        
+        span {
+          margin-right: 5px;
+          border: solid 1px #777;
+          cursor: pointer;
+          border-radius: 2px;
+          
+          &.zoomin {
+            padding: 2px 5px;
+          }
+          &.zoomout {
+            padding: 2px 8px;
+          }
+          &:hover {
+            background: black;
+            color: white;
+          }
+        }
+      }
+    }
+    
+    span.zoom {
+      
+      
+    }
+  }
+  
+#header{
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+
+    & #logo img{
+        width: 300px;
+        margin: 20px 0px 0px 20px;
+    }
+}  
+
+.headline{
+    position: absolute;
+    z-index: 3;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & h1{
+        text-align: center;
+        color: white;
+        font-size: 60px;
+        font-family: 'Exan';
+    }
+
+    & .shadowed {
+        text-shadow: 5px 10px 5px rgba(97, 181, 255, 1);
+      }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    #header{
+        position: absolute;
+        z-index: 2;
+        background-color: transparent;
+    
+        & #logo img{
+            width: 200px;
+            margin: 20px 0px 0px 20px;
+        }
+    }  
+
+    .headline{
+        position: absolute;
+        z-index: 3;
+        background-color: transparent;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        & h1{
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            font-family: 'Exan';
+        }
+    
+        & .shadowed {
+            text-shadow: 2px -2px 1px rgba(97, 181, 255, 1);
+          }
+    }
+
+}
+
