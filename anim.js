@@ -334,7 +334,9 @@
 
 
  $(document).ready(function() {
-  
+    document.addEventListener('click',function(){
+      window.location.href='home.html';
+    })
     var $w = $(window);
     var $shadowed = $('.shadowed');
     var $glow = $('.glow');
@@ -386,3 +388,5 @@
     });
     
   });
+
+

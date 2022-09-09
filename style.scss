@@ -28,15 +28,27 @@
     width: 100%;
     height: 100%;
   }
+
+
+  @keyframes disappear {
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+
   .ui {
     display: none;
     position: fixed;
-    z-index: 5;
+    z-index: 0;
     bottom: 0;
     left: 0;
     width: 120px;
     padding: 10px;
     background: rgba(255,255,255,0.7);
+    
     
     p {
       //color: white;
@@ -72,24 +84,32 @@
     }
   }
   
-#header{
-    position: absolute;
-    z-index: 2;
-    background-color: transparent;
+ 
 
-    & #logo img{
-        width: 300px;
-        margin: 20px 0px 0px 20px;
-    }
-}  
 
 .headline{
     position: absolute;
     z-index: 3;
     background-color: transparent;
+    display: flex;
+    width: 500px;
+    height: 500px;
+      justify-content: center;
+      align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    #logo {
+      display: flex;
+      width: 300px;
+      justify-content: center;
+      align-items: center;
+    & img{
+      width: 250px;
+}
+}
+      
 
     & h1{
         text-align: center;
@@ -119,7 +139,7 @@
 
     .headline{
         position: absolute;
-        z-index: 3;
+        z-index: 0;
         background-color: transparent;
         top: 45%;
         left: 50%;
@@ -139,3 +159,103 @@
 
 }
 
+
+@keyframes zoom {
+  0% {
+  transform: scale(1);
+  }
+  40%{
+    transform: scale(1.4);
+  }
+ 90% {
+    transform: scale(0.9);
+    
+  }
+  100% {
+    transform: scale(1);
+    
+  }
+}
+
+.black_back{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: translate(-50%,-50%);
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  & p{
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-bottom: 20px;
+    animation: zoom 2s infinite ease-in-out;
+  }
+}
+
+
+
+@media all and (max-width: 600px) {
+  .black_back{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transform: translate(-50%,-50%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    padding-bottom: 100px;
+    & p{
+      text-align: center;
+      color: white;
+      font-size: 12px;
+      margin-bottom: 20px;
+      animation: zoom 2s infinite ease-in-out;
+    }
+  }
+
+
+
+.headline{
+  position: absolute;
+  z-index: 3;
+  background-color: transparent;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+    justify-content: center;
+    align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  #logo {
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+  & img{
+    width: 250px;
+}
+}
+    
+
+  & h1{
+      text-align: center;
+      color: white;
+      font-size: 60px;
+      font-family: 'Exan';
+  }
+
+  & .shadowed {
+      text-shadow: 5px 10px 5px rgba(97, 181, 255, 1);
+    }
+}
+}
